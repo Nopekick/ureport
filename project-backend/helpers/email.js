@@ -2,7 +2,7 @@ const db = require("../models");
 const sgMail = require('@sendgrid/mail');
 const swearJar = require("swearjar")
 
-const key = 'WGUoMJzBse4g3IntCQg_WV5N_J8NayfDWZma1phu3v8'
+const key = ' // your api key //'
 sgMail.setApiKey(key);
 
 exports.verify = function(req, res, next){
@@ -22,7 +22,7 @@ exports.verify = function(req, res, next){
   })
 }
 
-exports.sendVerification = function(userEmail, userHash){
+exports.sendVerification = function(userEmail, userHash, fname, lname){
   return new Promise((resolve, reject) => {
     const link = `http://localhost:8081/api/email/verify/${userHash}`
     const msgVerify = {
@@ -30,12 +30,13 @@ exports.sendVerification = function(userEmail, userHash){
       from: 'confirmEmail@noreplyemail.com',
       subject: 'Email Confirmation',
       text: `Someone recently used this email to sign up for an account.
-      Please verify your email by clicking on the link below`,
+      If you are ${fname} ${lname} , please verify your email by clicking on the link below`,
       html: `<p>Some recently used this email to sign up for an account.
       Please verify your email by clicking on the link below</p>
       <a href="${link}"> Confirm! </a>`
     };
     sgMail.send(msgVerify);
+    console.log(`verification email sent to ${userEmail}`)
     resolve();
   })
 }

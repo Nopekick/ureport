@@ -17,6 +17,12 @@ class Report extends Component {
     this.reportApi = this.reportApi.bind(this)
   }
 
+  componentDidMount(){
+    if(localStorage && !localStorage.token){
+      this.props.history.push("/")
+    }
+  }
+
 
   reportApi(e){
     e.preventDefault()

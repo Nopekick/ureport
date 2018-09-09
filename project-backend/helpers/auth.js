@@ -37,7 +37,7 @@ exports.signup = async function(req, res, next){
     let {_id, email} = user
     let token = jwt.sign({_id,email}, "swofjoidjskldjfl4349df9dfadvlkjslj9")
 
-    await sendVerification(user.email, user.hash)
+    await sendVerification(user.email, user.hash, user.fname, user.lname)
     return res.status(200).json({
       token
     })
