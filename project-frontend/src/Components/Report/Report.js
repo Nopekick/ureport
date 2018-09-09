@@ -18,7 +18,7 @@ class Report extends Component {
   }
 
   componentDidMount(){
-    if(localStorage && !localStorage.token){
+    if(localStorage && !localStorage.jwtToken){
       this.props.history.push("/")
     }
   }

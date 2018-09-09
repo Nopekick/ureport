@@ -22,6 +22,7 @@ class Signin extends Component {
     e.preventDefault()
     apiCall("post", "http://localhost:8081/api/auth/login", this.state).then((data)=>{
         setTokenHeader(data.token)
+        localStorage.jwtToken = data.token
         this.props.signIn()
         console.log(axios.defaults.headers.common)
         this.setState({
@@ -31,7 +32,7 @@ class Signin extends Component {
         this.props.history.push('/report')
     }).catch((err)=>{
       console.log(err)
-      this.props.history.push("/")
+      this.props.history.push("/signin")
     })
   }
 

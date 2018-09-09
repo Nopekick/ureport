@@ -2,7 +2,7 @@ const db = require("../models");
 const sgMail = require('@sendgrid/mail');
 const swearJar = require("swearjar")
 
-const key = ' // your api key //'
+const key = '// your api key //'
 sgMail.setApiKey(key);
 
 exports.verify = function(req, res, next){

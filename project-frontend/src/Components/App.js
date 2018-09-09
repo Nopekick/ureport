@@ -28,7 +28,7 @@ class App extends Component {
   componentDidMount() {
     if(localStorage && localStorage.jwtToken){
       this.setState({isAuthenticated: true})
-    } 
+    }
   }
 
   userLoggedIn = () => {
@@ -51,7 +51,7 @@ class App extends Component {
           <Route exact path="/" component={Home}/>
           <Route path="/signin" component={()=> <Signin signIn={this.userLoggedIn}/>} />
           <Route path="/signup"  component={()=> <Signup signIn={this.userLoggedIn}/>}/>
-          <Route path="/report"  component={Report}/>
+          <Route path="/report"  component={Report} />}/>
           <Route path="/about" component={About} />
         </Switch>
       </div>
