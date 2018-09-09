@@ -1,0 +1,59 @@
+#hero {
+  color : antiquewhite;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+#hero-small {
+  color : antiquewhite;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 0px;
+}
+
+#crea{
+    background-color: orange;
+    border-color: antiquewhite;
+    width: 140px;
+    height: 45px;
+    border-radius: 7px;
+    font-size: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#crea:hover{
+  color: black;
+  text-decoration: none;
+}
+
+#sub{
+  color: antiquewhite;
+  text-align:center;
+  margin-bottom: 1.4em;
+}
+
+#home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 700px;
+    margin: auto;
+    padding-top: 100px
+}
+
+#homepic {
+  background-color: rgba(0,0,0,0);
+  width: 100vw;
+  height: 100vh;
+  background-image: url("homepic.jpg");
+  z-index: -1;
+  background-size: cover;
+  left: 0;
+  top: 0;
+}
