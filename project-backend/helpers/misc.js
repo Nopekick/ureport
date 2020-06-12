@@ -22,6 +22,7 @@ exports.getTeachers = function(req, res, next){
   //     next({message: err, status: 400})
   // })
 
+  //won't work, taken out
   db.Teacher.find({email: ''})
   .then((teacher) => {
     res.status(200).json(teacher)
