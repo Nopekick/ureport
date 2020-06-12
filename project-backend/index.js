@@ -2,15 +2,22 @@ const express = require("express")
 const app = express()
 const bodyParser = require("body-parser")
 const cors = require("cors")
+const helmet = require("helmet")
+let route = process.env.PORT || 8081;
 
 const authRoutes = require("./routes/auth")
 const emailRoutes = require("./routes/email")
+const adminRoutes = require("./routes/admin")
+const schoolRoutes = require("./routes/school")
 
 app.use(bodyParser.json())
 app.use(cors())
+app.use(helmet())
 
 app.use("/api/auth", authRoutes)
 app.use("/api/email", emailRoutes)
+app.use("/api/admin", adminRoutes)
+app.use("/api/school", schoolRoutes)
 
 app.use(function(req, res, next){
   let err = new Error('Not Found')
@@ -26,6 +33,6 @@ app.use(function errorHandler(error, req, res, next){
   })
 })
 
-app.listen(8081, function(){
+app.listen(route, function(){
   console.log("Starting on port 8081")
 })

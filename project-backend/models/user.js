@@ -25,6 +25,26 @@ const userSchema = new mongoose.Schema({
   },
   hash: {
     type:String
+  },
+  isAdmin: {
+    type: Boolean,
+    default: false
+  },
+  isBanned: {
+    type: Boolean,
+    default: false
+  },
+  school: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'School'
+  },
+  date: {
+    type: Date,
+    default: Date.now()
+  },
+  hasBeenWarned: {
+    type: Boolean,
+    default: false
   }
 })
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import "./About.css"
 
 const imgStyle = {
   "borderRadius": "50%",
@@ -6,21 +7,21 @@ const imgStyle = {
   "width" : "100px"
 }
 
-const divStyle = {
-  "display" : "flex",
-  "alignItems" : "center",
-  "flexDirection" : "row",
-  "justifyContent" : "space-between",
-  "marginBottom" : "15px"
+const pStyle = {
+  "marginBottom" : "0px"
+}
+
+const descStyle = {
+  "textAlign" : "center"
 }
 
 
 
 const Person = ({src, name, description}) => {
-  return <div style={divStyle}>
-    <img style={imgStyle} src={src} />
-    <p><strong>{name}</strong></p>
-    <p>{description}</p>
+  return <div id="person">
+    <img alt='face pic' style={imgStyle} src={src} />
+    <p style={pStyle}><strong>{name}</strong></p>
+    <p style={descStyle}>{description}</p>
    </div>
 }
 
