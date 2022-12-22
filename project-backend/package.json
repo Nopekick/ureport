@@ -17,7 +17,7 @@
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "helmet": "^3.13.0",
-    "jsonwebtoken": "^8.3.0",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.2.13",
     "swearjar": "^0.2.0"
   }
